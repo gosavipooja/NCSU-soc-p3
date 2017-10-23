@@ -1,0 +1,29 @@
+package actor
+
+rule "gotquery"
+  when
+  UserActor.QueryMessage()
+  then
+  play.Logger.info("got query");
+end
+
+rule "gotreferral"
+  when
+  UserActor.Referral()
+  then
+  play.Logger.info("got referral");
+end
+
+rule "gotanswer"
+  when
+  UserActor.Answer()
+  then
+  play.Logger.info("got answer");
+end
+
+rule "gotrefusal"
+  when
+  UserActor.Refusal()
+  then
+  play.Logger.info("got refusal");
+end
